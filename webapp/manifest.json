@@ -1,0 +1,91 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "com.example.myapp",
+    "type": "application",
+    "title": "My SAPUI5 App",
+    "description": "A simple SAPUI5 app",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://hello-world",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.example.myapp.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.30.0",
+      "libs": {
+        "sap.m": {}
+      }
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+          "data": {
+            "helloPanel": {
+              "busy": false,
+              "to": "World"
+            }
+          }
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.example.myapp.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": ["notFound"]
+        }
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "main",
+          "target": ["main"]
+        }
+      ],
+      "targets": {
+        "main": {
+          "viewName": "Main",
+          "viewLevel": 1
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewLevel": 1
+        }
+      }
+    }
+  }
+}
