@@ -3,7 +3,7 @@ sap.ui.require(
   function (XMLView, Text) {
     "use strict";
     XMLView.create({
-      viewName: "sap.ui.demo.walkthrough.viewApp",
+      viewName: "sap.ui.demo.walkthrough.view.viewApp",
     }).then(function (oView) {
       oView.placeAt("content");
     });
